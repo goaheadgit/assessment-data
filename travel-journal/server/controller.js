@@ -232,24 +232,24 @@ module.exports = {
         }).catch(err => console.log('error seeding DB', err))
     },
     
-    getCountries: (req, res) => {
-        sequelize.query(`
-        SELECT * FROM countries;
-        `).then(() => {
-            console.log('DB seeded!')
-            res.sendStatus(200)
-        }).catch(err => console.log('error seeding DB', err))
-    },
+    // getCountries: (req, res) => {
+    //     sequelize.query(`
+    //     SELECT * FROM countries;
+    //     `).then(() => {
+    //         console.log('DB seeded!')
+    //         res.sendStatus(200)
+    //     }).catch(err => console.log('error seeding DB', err))
+    // },
 
-    createCity: (req, res) => {
-        const {name, rating, countryId} =req.body
-        sequelize.query(`
-        INSERT INTO cities (name, rating, countryId)
-        VALUES ({$name}, {$rating}, {$countryId})
-        `).then(() => {
-            console.log('DB seeded!')
-            res.sendStatus(200)
-        }).catch(err => console.log('error seeding DB', err))
-    },
+    // createCity: (req, res) => {
+    //     const {name, rating, countryId} =req.body
+    //     sequelize.query(`
+    //     INSERT INTO cities (name, rating, countryId)
+    //     VALUES ({$name}, {$rating}, {$countryId})
+    //     `).then(() => {
+    //         console.log('DB seeded!')
+    //         res.sendStatus(200)
+    //     }).catch(err => console.log('error seeding DB', err))
+    // },
 
 }
