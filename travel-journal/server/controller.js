@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 const {CONNECTION_STRING} = process.env
 const Sequelize = require('sequelize')
@@ -10,7 +9,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
             rejectUnauthorized: false
         }
     }
-  })
+})
 
 module.exports = {
     seed: (req, res) => {
@@ -246,6 +245,17 @@ module.exports = {
     //     sequelize.query(`
     //     INSERT INTO cities (name, rating, countryId)
     //     VALUES ({$name}, {$rating}, {$countryId})
+    //     `).then(() => {
+    //         console.log('DB seeded!')
+    //         res.sendStatus(200)
+    //     }).catch(err => console.log('error seeding DB', err))
+    // },
+
+    //     getCities: (req, res) => {
+    //     const {name, rating, countryId} =req.body
+    //     sequelize.query(`
+    //     INSERT INTO cities (name, rating, countryId),
+    //     VALUES ({$name}, {$rating}, {$countryId}),
     //     `).then(() => {
     //         console.log('DB seeded!')
     //         res.sendStatus(200)
